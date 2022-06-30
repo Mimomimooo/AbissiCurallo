@@ -4,6 +4,12 @@
  */
 package abissicurallo;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.media.*;
+import java.net.*;
+
 /**
  *
  * @author murat
@@ -15,8 +21,41 @@ public class FinestraIniziale extends javax.swing.JFrame {
      */
     public FinestraIniziale() {
         
-        setUndecorated (true);
+ super("Demo JMF");
+        play();
+        Component panelControl = mp4Player.getControlPanelComponent();
+        Component visualComponent = mp4Player.getVisualComponent();
+        this.getContentPane().add(panelControl, BorderLayout.WEST);
+        this.getContentPane().add(visualComponent, BorderLayout.CENTER);
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we) {
+                stop();
+                System.exit(0);
+            }
+        });
+        this.pack();
+        this.setSize(new Dimension(1080, 720));
+        this.setVisible(true);
+        setUndecorated(true);
         initComponents();
+
+    }
+    static Player mp4Player = null;
+  
+
+    void play() {
+        try {
+            URL url = new URL("file", null, "C:\\Users\\murat\\OneDrive\\Documenti\\GitHub\\AbissiCurallo\\AbissiCurallo\\src\\abissicurallo\\FZNS8703.MP4");
+            mp4Player = Manager.createRealizedPlayer(url);
+            mp4Player.start();
+        } catch (Exception e) {
+            System.out.println("unable to play :" + e);
+        }
+    }
+
+    void stop() {
+        mp4Player.stop();
+        mp4Player.close();
     }
 
     /**
@@ -28,28 +67,17 @@ public class FinestraIniziale extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/drone-underwater.png"))); // NOI18N
-        jLabel1.setText("AAA");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+            .addGap(0, 801, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(362, Short.MAX_VALUE))
+            .addGap(0, 640, Short.MAX_VALUE)
         );
 
         pack();
@@ -59,30 +87,15 @@ public class FinestraIniziale extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        FinestraIniziale FI = new FinestraIniziale();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FinestraIniziale.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FinestraIniziale.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FinestraIniziale.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FinestraIniziale.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
+
+ /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FinestraIniziale().setVisible(true);
@@ -91,6 +104,5 @@ public class FinestraIniziale extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
