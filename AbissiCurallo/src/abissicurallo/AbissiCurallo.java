@@ -9,15 +9,19 @@ package abissicurallo;
  * @author murat
  */
 public class AbissiCurallo {
-         public static ProvaMa FinestraIniziale ;
+     
+    public static FinestraIniziale FI ;
+         
+         
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-                FinestraIniziale = new ProvaMa();
-        FinestraIniziale.setLocation(438, 180);
-        FinestraIniziale.setVisible(true);
+        
+        FI = new FinestraIniziale();
+        FI.setLocation(590, 90);
+        FI.setVisible(true);
 
     }
     
