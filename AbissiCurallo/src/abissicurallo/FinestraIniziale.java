@@ -32,6 +32,7 @@ public class FinestraIniziale extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/drone-underwater.png"))); // NOI18N
         jLabel1.setText("AAA");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
