@@ -4,19 +4,32 @@
  */
 package abissicurallo;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+
 /**
  *
  * @author lauma
  */
-public class FinestraIniziale extends javax.swing.JFrame {
+public class FinestraIniziale extends javax.swing.JFrame implements ActionListener {
+   
+    Timer timer ;
+    int sec= 0 ;
 
     /**
      * Creates new form FinestraIniziale
      */
     public FinestraIniziale() {
+        timer= new Timer (1000, this);
+        timer.start () ;
+        
+        
+        
         
         setUndecorated (true);
         initComponents();
+        jLabel2.setVisible(false );
     }
 
     /**
@@ -28,23 +41,20 @@ public class FinestraIniziale extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new javax.swing.OverlayLayout(getContentPane()));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frase2def.gif"))); // NOI18N
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(jLabel2);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Iniziodefinitivo.gif"))); // NOI18N
-        jLabel1.setText("jLabel1");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -86,5 +96,12 @@ public class FinestraIniziale extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        sec++ ;
+        System.out.println (sec) ;
+    }
 }
