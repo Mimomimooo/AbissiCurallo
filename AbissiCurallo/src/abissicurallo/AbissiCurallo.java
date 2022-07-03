@@ -10,7 +10,7 @@ package abissicurallo;
  */
 public class AbissiCurallo {
      
-    public static FinestraIniziale FI ;
+    public static FinestraIniziale FI;
      public static FinestraAudio FA;
          
          

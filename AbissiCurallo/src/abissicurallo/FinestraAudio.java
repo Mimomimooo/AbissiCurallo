@@ -31,7 +31,7 @@ public class FinestraAudio extends javax.swing.JFrame {
         //MC1 = new MiaClipAudio ("C:\\Users\\lauma\\Downloads\\lamantino-ok.wav" );
         
         String path = getClass().getResource("").toString().replace("build/classes/abissicurallo/", "src/abissicurallo/").replace("file:/", "");
-        MC1 = new MiaClipAudio (path+"lamantino-ok.wav");
+        MC1 = new MiaClipAudio (path+"base totale.wav");
         
         MC1.start();
         //MC1.loop  (  Clip.LOOP_CONTINUOUSLY  );

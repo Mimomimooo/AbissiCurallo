@@ -36,8 +36,6 @@ public class FinestraIniziale extends javax.swing.JFrame{
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        lbLamantinoPR = new javax.swing.JLabel();
-        lbLamantinoB = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(762, 1080));
@@ -46,50 +44,12 @@ public class FinestraIniziale extends javax.swing.JFrame{
                 formKeyPressed(evt);
             }
         });
+        getContentPane().setLayout(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/InizioC.gif"))); // NOI18N
         jLabel1.setText("jLabel1");
-
-        lbLamantinoPR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/lamantino.png"))); // NOI18N
-        lbLamantinoPR.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lbLamantinoPRMouseEntered(evt);
-            }
-        });
-
-        lbLamantinoB.setText("jLabel2");
-        lbLamantinoB.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lbLamantinoBMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(lbLamantinoB, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbLamantinoPR, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(lbLamantinoPR, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(lbLamantinoB, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 333, 1080);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -99,61 +59,22 @@ public class FinestraIniziale extends javax.swing.JFrame{
         if (evt.getKeyCode()== KeyEvent.VK_SPACE){System.out.println("laura");}
     }//GEN-LAST:event_formKeyPressed
 
-    private void lbLamantinoPRMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbLamantinoPRMouseEntered
-        // TODO add your handling code here:
-        
-        lbLamantinoPR.setVisible(false);
-        lbLamantinoB.setVisible(true);
-        
-    }//GEN-LAST:event_lbLamantinoPRMouseEntered
-
-    private void lbLamantinoBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbLamantinoBMouseExited
-        // TODO add your handling code here:
-        
-        lbLamantinoPR.setVisible(true);
-        lbLamantinoB.setVisible(false);
-        
-    }//GEN-LAST:event_lbLamantinoBMouseExited
-
     /**
      * @param args the command line arguments
-     */
+  
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FinestraIniziale.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FinestraIniziale.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FinestraIniziale.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FinestraIniziale.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+        
 
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FinestraIniziale().setVisible(true);
             }
         });
     }
-
+*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lbLamantinoB;
-    private javax.swing.JLabel lbLamantinoPR;
     // End of variables declaration//GEN-END:variables
 
    
