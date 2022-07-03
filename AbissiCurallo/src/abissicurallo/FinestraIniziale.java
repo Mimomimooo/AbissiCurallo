@@ -6,6 +6,9 @@ package abissicurallo;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import javax.swing.JLabel;
 import javax.swing.Timer;
 
 /**
@@ -13,17 +16,19 @@ import javax.swing.Timer;
  * @author lauma
  */
 public class FinestraIniziale extends javax.swing.JFrame implements ActionListener {
+   ArrayList< JLabel > al= new ArrayList< JLabel > () ;
    
+  
     Timer timer ;
     int sec= 0 ;
-
+int count = 0  ;
     /**
      * Creates new form FinestraIniziale
      */
     public FinestraIniziale() {
         timer= new Timer (1000, this);
         timer.start () ;
-        
+        al.add(jLabel2) ;
         
         
         
@@ -47,6 +52,11 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
         getContentPane().setLayout(new javax.swing.OverlayLayout(getContentPane()));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frase2def.gif"))); // NOI18N
@@ -54,12 +64,22 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jLabel2);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Iniziodefinitivo.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Definizio.gif"))); // NOI18N
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(jLabel1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+    if (evt.getKeyCode()== KeyEvent.VK_SPACE) {
+      //al.get(count).setVisible(true) ;
+      System.out.println(al.get(0)) ;
+      count++ ;
+    }
+     
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formKeyPressed
 
     /**
      * @param args the command line arguments
