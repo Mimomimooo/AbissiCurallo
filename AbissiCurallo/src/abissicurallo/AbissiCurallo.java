@@ -21,7 +21,7 @@ public class AbissiCurallo {
         // TODO code application logic here
         
         FI = new FinestraIniziale();
-        FI.setLocation(500, 0);
+        FI.setLocation(500, 3);
         FI.setVisible(true);
         
         FA = new FinestraAudio();
