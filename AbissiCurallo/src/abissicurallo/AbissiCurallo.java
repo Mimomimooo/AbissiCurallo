@@ -11,6 +11,7 @@ package abissicurallo;
 public class AbissiCurallo {
      
     public static FinestraIniziale FI ;
+     public static FinestraAudio FA;
          
          
     /**
@@ -22,6 +23,10 @@ public class AbissiCurallo {
         FI = new FinestraIniziale();
         FI.setLocation(590, 90);
         FI.setVisible(true);
+        
+        FA = new FinestraAudio();
+        FA.setLocation(0, 0);
+        FA.setVisible(false);
 
     }
     
