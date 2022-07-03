@@ -16,27 +16,29 @@ import javax.swing.Timer;
  * @author lauma
  */
 public class FinestraIniziale extends javax.swing.JFrame implements ActionListener {
-   ArrayList< JLabel > al= new ArrayList< JLabel > () ;
-   
-  
-    Timer timer ;
-    int sec= 0 ;
-int count = 0  ;
+
+    ArrayList< JLabel> al = new ArrayList< JLabel>();
+    ArrayList< Integer> durataGif = new ArrayList< Integer>();
+
+    Timer timer;
+    int sec = 0;
+    int count = 0;
+
     /**
      * Creates new form FinestraIniziale
      */
     public FinestraIniziale() {
-        timer= new Timer (1000, this);
-        timer.start () ;
-        al.add(jLabel2) ;
-        
-        
-        
-        setUndecorated (true);
+        timer = new Timer(1000, this);
+        timer.start();
+
+        setUndecorated(true);
         initComponents();
-        
-        jLabel2.setVisible(false );
-        
+
+        al.add(jLabel2);
+        durataGif.add(17);
+
+        jLabel2.setVisible(false);
+
     }
 
     /**
@@ -59,7 +61,7 @@ int count = 0  ;
         });
         getContentPane().setLayout(new javax.swing.OverlayLayout(getContentPane()));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frase2def.gif"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Def2frase.gif"))); // NOI18N
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jLabel2);
@@ -72,12 +74,16 @@ int count = 0  ;
     }// </editor-fold>//GEN-END:initComponents
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-    if (evt.getKeyCode()== KeyEvent.VK_SPACE) {
-      //al.get(count).setVisible(true) ;
-      System.out.println(al.get(0)) ;
-      count++ ;
-    }
-     
+        if (evt.getKeyCode() == KeyEvent.VK_SPACE) {
+          
+
+            if (sec > durataGif.get(count)) {
+                al.get(count).setVisible(true);
+                System.out.println(al.get(0));
+                count++;
+            }
+        }
+
         // TODO add your handling code here:
     }//GEN-LAST:event_formKeyPressed
 
@@ -123,7 +129,7 @@ int count = 0  ;
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        sec++ ;
-        System.out.println (sec) ;
+        sec++;
+        System.out.println(sec);
     }
 }
