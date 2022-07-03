@@ -29,7 +29,9 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         
         setUndecorated (true);
         initComponents();
+        
         jLabel2.setVisible(false );
+        
     }
 
     /**
