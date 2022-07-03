@@ -27,7 +27,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/abissicurallo/Frase2def.gif"/>
+          <Image iconType="3" name="/abissicurallo/Def2frase.gif"/>
         </Property>
         <Property name="verticalAlignment" type="int" value="1"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
