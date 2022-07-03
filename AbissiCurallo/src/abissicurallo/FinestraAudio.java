@@ -14,6 +14,11 @@ public class FinestraAudio extends javax.swing.JFrame {
 
     public MiaClipAudio  MC1 ;
     public MiaClipAudio  MC2 ;
+    public MiaClipAudio  MC3 ;
+    public MiaClipAudio  MC4 ;
+    public MiaClipAudio  MC5 ;
+    public MiaClipAudio  MC6 ;
+    public MiaClipAudio  MC7 ;
     
     
     /**
@@ -22,9 +27,14 @@ public class FinestraAudio extends javax.swing.JFrame {
     public FinestraAudio() {
         initComponents();
         
-        MC1 = new MiaClipAudio ("audio/sottofondo.wav");
+        //MC1 = new MiaClipAudio ("C:\\Users\\lauma\\Downloads\\lamantino-ok.wav" );
+        //MC1 = new MiaClipAudio ("C:\\Users\\lauma\\Downloads\\lamantino-ok.wav" );
         
-        MC1.loop  (  Clip.LOOP_CONTINUOUSLY  );
+        String path = getClass().getResource("").toString().replace("build/classes/abissicurallo/", "src/abissicurallo/").replace("file:/", "");
+        MC1 = new MiaClipAudio (path+"lamantino-ok.wav");
+        
+        MC1.start();
+        //MC1.loop  (  Clip.LOOP_CONTINUOUSLY  );
         
         //MC1 = new MiaClipAudio ("media/audio1.wav");
         
@@ -113,7 +123,7 @@ public class FinestraAudio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FinestraAudio().setVisible(true);
+                new FinestraAudio().setVisible(false);
             }
         });
     }
