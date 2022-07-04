@@ -81,6 +81,10 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         jLabel8.setVisible(false);
         jLabel9.setVisible(false);
         jLabelPremiSpazio.setVisible(false);
+
+        dx1.setLocation(790, 400) ; //255x250 //540x810 
+        sx1.setLocation(-297, 500);//297x207
+
     }
 
     /**
@@ -93,9 +97,9 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabelPremiSpazio = new javax.swing.JLabel();
         dx1 = new javax.swing.JLabel();
         sx1 = new javax.swing.JLabel();
-        jLabelPremiSpazio = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -116,18 +120,18 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
 
         jPanel1.setLayout(null);
 
-        dx1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/after effect/1dx.png"))); // NOI18N
-        jPanel1.add(dx1);
-        dx1.setBounds(270, 430, 270, 270);
-
-        sx1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/after effect/1sx.png"))); // NOI18N
-        jPanel1.add(sx1);
-        sx1.setBounds(10, 500, 310, 310);
-
         jLabelPremiSpazio.setText("laura ti meno");
         jLabelPremiSpazio.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(jLabelPremiSpazio);
         jLabelPremiSpazio.setBounds(190, 640, 130, 50);
+
+        dx1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/after effect/1dx.png"))); // NOI18N
+        jPanel1.add(dx1);
+        dx1.setBounds(260, 430, 270, 270);
+
+        sx1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/after effect/1sx.png"))); // NOI18N
+        jPanel1.add(sx1);
+        sx1.setBounds(0, 500, 310, 310);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Secdiscesadef.gif"))); // NOI18N
         jLabel9.setText("jLabel9");
@@ -194,14 +198,14 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_SPACE) {
 
-            if(count < al.size()-1){
-        if(sec > skipGif.get(count)){
-            al.get(count+1).setVisible(true) ;//gif successiva
-            jLabelPremiSpazio.setVisible(false);
-            sec = 0;
-            count++;
-        }
-    }
+            if (count < al.size() - 1) {
+                if (sec > skipGif.get(count)) {
+                    al.get(count + 1).setVisible(true);//gif successiva
+                    jLabelPremiSpazio.setVisible(false);
+                    sec = 0;
+                    count++;
+                }
+            }
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_formKeyPressed
@@ -261,19 +265,26 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     public void actionPerformed(ActionEvent e) {
         sec++;
         // System.out.println(sec);
-        if(count < al.size()-1){
-        if(sec > fineGif.get(count)){
-            al.get(count+1).setVisible(true);
-            sec = 0;
+        if (count < al.size() - 1) {
+            if (sec > fineGif.get(count)) {
+                al.get(count + 1).setVisible(true);
+                sec = 0;
+                jLabelPremiSpazio.setVisible(false);
+                count++;
+            }
+            if (sec >= skipGif.get(count)) {
+                jLabelPremiSpazio.setVisible(true);
+
+            }
+        } else {
             jLabelPremiSpazio.setVisible(false);
-            count++;
         }
-        if(sec >= skipGif.get(count)){
-            jLabelPremiSpazio.setVisible(true);
-            
+        int seconditotali = 0;
+        if (seconditotali > 5) {
+            dx1.setLocation((dx1.getLocationOnScreen().x - 10), dx1.getLocationOnScreen().y);
+
+            sx1.setLocation((sx1.getLocationOnScreen().x + 10), sx1.getLocationOnScreen().y);
         }
-    }else{
-        jLabelPremiSpazio.setVisible(false);
-    }
+        seconditotali++;
     }
 }
