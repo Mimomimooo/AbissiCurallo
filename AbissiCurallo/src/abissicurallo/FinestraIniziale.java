@@ -44,15 +44,15 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         skipGif.add(0f);
 
         al.add(jLabel2);
-        fineGif.add(5.4f); //durata di gif
+        fineGif.add(5.5f); //durata di gif
         skipGif.add(1f); // inizi a skippare somma maggiore di sec di inizio
 
         al.add(jLabel3);
-        fineGif.add(1.9f);
+        fineGif.add(2.7f);
         skipGif.add(1f);//+2
 
         al.add(jLabel4);
-        fineGif.add(1.7f);
+        fineGif.add(1.6f);
         skipGif.add(1f);//1
 
         al.add(jLabel5);
@@ -60,31 +60,31 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         skipGif.add(2f);//2
 
         al.add(jLabel6);
-        fineGif.add(0.8f);
+        fineGif.add(1.5f);
         skipGif.add(0f);//6
 
         al.add(jLabel7);
-        fineGif.add(1.0f);
+        fineGif.add(2.7f);
         skipGif.add(1f);//1
 
         al.add(jLabel8);
-        fineGif.add(0.4f);
+        fineGif.add(2f);
         skipGif.add(1f);//1
 
         al.add(jLabel9);
-        fineGif.add(3.8f);
+        fineGif.add(16f);
         skipGif.add(2f);//4
 
         al.add(jinc1);
-        fineGif.add(0.8f);
+        fineGif.add(4f);
         skipGif.add(1f);//4
 
         al.add(jinc2);
-        fineGif.add(0.7f);
+        fineGif.add(3.7f);
         skipGif.add(2f);//4
 
         al.add(jinc3);
-        fineGif.add(2f);
+        fineGif.add(4f);
         skipGif.add(2f);//4
 
         al.add(jinc4);
@@ -202,7 +202,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frase3.gif"))); // NOI18N
         jLabel7.setText("jLabel7");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(-3, -4, 550, 820);
+        jLabel7.setBounds(0, 0, 540, 810);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frase6def.gif"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -217,7 +217,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frase4def.gif"))); // NOI18N
         jLabel4.setText("jLabel5");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(-3, -4, 540, 820);
+        jLabel4.setBounds(0, 0, 540, 810);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frase3.gif"))); // NOI18N
