@@ -135,18 +135,20 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Secdiscesadef.gif"))); // NOI18N
         jLabel9.setText("jLabel9");
+        jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel1.add(jLabel9);
         jLabel9.setBounds(0, 0, 540, 810);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frase8def.gif"))); // NOI18N
         jLabel8.setText("jLabel8");
+        jLabel8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel1.add(jLabel8);
         jLabel8.setBounds(0, 0, 540, 810);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frase3.gif"))); // NOI18N
         jLabel7.setText("jLabel7");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(-3, 6, 550, 810);
+        jLabel7.setBounds(-3, -4, 550, 820);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frase6def.gif"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -163,14 +165,15 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         jPanel1.add(jLabel4);
         jLabel4.setBounds(-3, -4, 540, 820);
 
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Def3frase (1).gif"))); // NOI18N
         jLabel3.setText("jLabel4");
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel1.add(jLabel3);
         jLabel3.setBounds(0, 0, 540, 810);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frase2def.gif"))); // NOI18N
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jLabel2);
         jLabel2.setBounds(0, 0, 540, 830);
 
