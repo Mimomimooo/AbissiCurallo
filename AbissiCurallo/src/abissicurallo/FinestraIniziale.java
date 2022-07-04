@@ -140,6 +140,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 153));
         setMaximumSize(new java.awt.Dimension(2147483647, 540));
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -147,6 +148,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setLayout(null);
 
         jLabelPremiSpazio.setBackground(new java.awt.Color(255, 255, 255));
