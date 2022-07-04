@@ -100,6 +100,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         jLabelPremiSpazio = new javax.swing.JLabel();
         dx1 = new javax.swing.JLabel();
         sx1 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -132,6 +133,8 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         sx1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/after effect/1sx.png"))); // NOI18N
         jPanel1.add(sx1);
         sx1.setBounds(0, 500, 310, 310);
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(0, 0, 540, 810);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Secdiscesadef.gif"))); // NOI18N
         jLabel9.setText("jLabel9");
@@ -251,6 +254,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel dx1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
