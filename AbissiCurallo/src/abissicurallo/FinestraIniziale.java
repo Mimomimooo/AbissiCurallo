@@ -109,6 +109,9 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
 
         dx1.setVisible(false);
         sx1.setVisible(false);
+        errore1.setVisible(false);
+        ottimo1.setVisible(false);
+        jLabel10.setVisible(false);
 
     }
 
@@ -123,6 +126,9 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
 
         jPanel1 = new javax.swing.JPanel();
         jLabelPremiSpazio = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        errore1 = new javax.swing.JLabel();
+        ottimo1 = new javax.swing.JLabel();
         dx1 = new javax.swing.JLabel();
         sx1 = new javax.swing.JLabel();
         jinc4 = new javax.swing.JLabel();
@@ -161,13 +167,45 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         jPanel1.add(jLabelPremiSpazio);
         jLabelPremiSpazio.setBounds(130, 690, 310, 100);
 
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Frasegiù1 (1).gif"))); // NOI18N
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(0, 0, 540, 810);
+
+        errore1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/errore1.PNG"))); // NOI18N
+        errore1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                errore1KeyPressed(evt);
+            }
+        });
+        jPanel1.add(errore1);
+        errore1.setBounds(0, 0, 540, 810);
+
+        ottimo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/ottimo1.PNG"))); // NOI18N
+        ottimo1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ottimo1KeyPressed(evt);
+            }
+        });
+        jPanel1.add(ottimo1);
+        ottimo1.setBounds(0, 0, 540, 810);
+
         dx1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/1dx.gif"))); // NOI18N
+        dx1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dx1MouseClicked(evt);
+            }
+        });
         jPanel1.add(dx1);
-        dx1.setBounds(230, 310, 490, 510);
+        dx1.setBounds(280, 310, 440, 510);
 
         sx1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/1sx.gif"))); // NOI18N
+        sx1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sx1MouseClicked(evt);
+            }
+        });
         jPanel1.add(sx1);
-        sx1.setBounds(0, 270, 540, 540);
+        sx1.setBounds(0, 270, 390, 540);
 
         jinc4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/primo incontro/Frase11def.gif"))); // NOI18N
         jinc4.setText("jLabel11");
@@ -270,6 +308,34 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         // TODO add your handling code here:
     }//GEN-LAST:event_formKeyPressed
 
+    private void sx1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sx1MouseClicked
+        // TODO add your handling code here:
+        
+        errore1.setVisible(true);
+        
+    }//GEN-LAST:event_sx1MouseClicked
+
+    private void dx1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dx1MouseClicked
+        // TODO add your handling code here:
+        
+        ottimo1.setVisible(true);
+        
+    }//GEN-LAST:event_dx1MouseClicked
+
+    private void errore1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_errore1KeyPressed
+        // TODO add your handling code here:
+        
+        jLabel10.setVisible(true);
+        
+    }//GEN-LAST:event_errore1KeyPressed
+
+    private void ottimo1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ottimo1KeyPressed
+        // TODO add your handling code here:
+        
+         jLabel10.setVisible(true);
+        
+    }//GEN-LAST:event_ottimo1KeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -307,7 +373,9 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel dx1;
+    private javax.swing.JLabel errore1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -322,6 +390,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     private javax.swing.JLabel jinc2;
     private javax.swing.JLabel jinc3;
     private javax.swing.JLabel jinc4;
+    private javax.swing.JLabel ottimo1;
     private javax.swing.JLabel sx1;
     // End of variables declaration//GEN-END:variables
 
@@ -348,5 +417,10 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         System.out.println("secondi" + sec);
 
         sectot += 0.1 ;
+        
+        if (count==al.size()-1 && sec>2) {
+        dx1.setVisible(true);
+        sx1.setVisible(true);
+        }
     }
 }
