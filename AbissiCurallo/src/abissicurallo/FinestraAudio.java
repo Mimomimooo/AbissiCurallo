@@ -33,12 +33,21 @@ public class FinestraAudio extends javax.swing.JFrame {
         String path = getClass().getResource("").toString().replace("build/classes/abissicurallo/", "src/abissicurallo/").replace("file:/", "");
         MC1 = new MiaClipAudio (path+"base definitva.wav");
         
-        MC1.start();
+        
         //MC1.loop  (  Clip.LOOP_CONTINUOUSLY  );
         
         //MC1 = new MiaClipAudio ("media/audio1.wav");
+        MC2 = new MiaClipAudio (path+"lamantino-ok.wav");
         
     }
+    
+public void suonoLamantino(){
+    MC2.start();
+}
+
+public void suonoStart(){
+    MC1.start();
+}
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -21,12 +21,14 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     ArrayList< JLabel> al = new ArrayList< JLabel>();
     ArrayList< Float> fineGif = new ArrayList< Float>();
     ArrayList< Float> skipGif = new ArrayList< Float>();
-    
+
     float sectot = 0;
 
     Timer timer;
     float sec = 0;
     int count = 0;
+
+    FinestraAudio FA = new FinestraAudio();
 
     /**
      * Creates new form FinestraIniziale
@@ -41,7 +43,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
 
         al.add(jLabel1);
         fineGif.add(18f);
-        skipGif.add(0f);
+        skipGif.add(5f);
 
         al.add(jLabel2);
         fineGif.add(5.5f); //durata di gif
@@ -112,6 +114,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         errore1.setVisible(false);
         ottimo1.setVisible(false);
         jLabel10.setVisible(false);
+        jLabel11.setVisible(false);
 
     }
 
@@ -125,6 +128,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         jLabelPremiSpazio = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         errore1 = new javax.swing.JLabel();
@@ -156,6 +160,11 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setLayout(null);
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Ultimafrase.gif"))); // NOI18N
+        jLabel11.setText("jLabel11");
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(0, 0, 540, 810);
 
         jLabelPremiSpazio.setBackground(new java.awt.Color(255, 255, 255));
         jLabelPremiSpazio.setFont(new java.awt.Font("Microsoft YaHei", 0, 18)); // NOI18N
@@ -310,30 +319,37 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
 
     private void sx1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sx1MouseClicked
         // TODO add your handling code here:
-        
+
         errore1.setVisible(true);
-        
+        count = 20;
+        sec = 0;
+
     }//GEN-LAST:event_sx1MouseClicked
 
     private void dx1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dx1MouseClicked
         // TODO add your handling code here:
-        
+
         ottimo1.setVisible(true);
-        
+        count = 20;
+        sec = 0;
+
     }//GEN-LAST:event_dx1MouseClicked
 
     private void errore1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_errore1KeyPressed
         // TODO add your handling code here:
-        
+
         jLabel10.setVisible(true);
-        
+        count = 20;
+        sec = 0;
     }//GEN-LAST:event_errore1KeyPressed
 
     private void ottimo1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ottimo1KeyPressed
         // TODO add your handling code here:
-        
-         jLabel10.setVisible(true);
-        
+
+        jLabel10.setVisible(true);
+        count = 20;
+        sec = 0;
+
     }//GEN-LAST:event_ottimo1KeyPressed
 
     /**
@@ -376,6 +392,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     private javax.swing.JLabel errore1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -398,6 +415,9 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     public void actionPerformed(ActionEvent e) {
         sec += 0.1;
         // System.out.println(sec);
+        if (count == 0 && sec > 1.3) {
+            FA.suonoStart();
+        }
         if (count < al.size() - 1) {
             if (sec > fineGif.get(count)) {
                 al.get(count + 1).setVisible(true);
@@ -416,11 +436,17 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         System.out.println("scena" + count);
         System.out.println("secondi" + sec);
 
-        sectot += 0.1 ;
-        
-        if (count==al.size()-1 && sec>2) {
-        dx1.setVisible(true);
-        sx1.setVisible(true);
+        sectot += 0.1;
+
+        if (count == al.size() - 1 && sec > 9) {// entrata animali1
+            dx1.setVisible(true);
+            sx1.setVisible(true);
+        }
+        if (count == al.size() - 1 && sec > 5.5) {//tempo entrata lamantino
+            FA.suonoLamantino();
+        }
+        if (count == 20 && sec == 2) {
+            jLabel11.setVisible(true);
         }
     }
 }
