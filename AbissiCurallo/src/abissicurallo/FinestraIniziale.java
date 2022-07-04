@@ -18,59 +18,75 @@ import javax.swing.Timer;
 public class FinestraIniziale extends javax.swing.JFrame implements ActionListener {
 
     ArrayList< JLabel> al = new ArrayList< JLabel>();
-    ArrayList< Integer> fineGif = new ArrayList< Integer>();
+    ArrayList< Float> fineGif = new ArrayList< Float>();
 
-    ArrayList< Integer> skipGif = new ArrayList< Integer>();
+    ArrayList< Float> skipGif = new ArrayList< Float>();
 
     Timer timer;
-    int sec = 0;
+    float sec = 0;
     int count = 0;
 
     /**
      * Creates new form FinestraIniziale
      */
     public FinestraIniziale() {
-        timer = new Timer(1000, this);
+        timer = new Timer(100, this);
         timer.start();
 
         setUndecorated(true);
         initComponents();
 
         al.add(jLabel1);
-        fineGif.add(18);
-        skipGif.add(0);
+        fineGif.add(18f);
+        skipGif.add(0f);
 
         al.add(jLabel2);
-        fineGif.add(5); //durata di gif
-        skipGif.add(2); // inizi a skippare somma maggiore di sec di inizio
+        fineGif.add(5.4f); //durata di gif
+        skipGif.add(1f); // inizi a skippare somma maggiore di sec di inizio
 
         al.add(jLabel3);
-        fineGif.add(2);
-        skipGif.add(1);//+2
+        fineGif.add(1.7f);
+        skipGif.add(1f);//+2
 
         al.add(jLabel4);
-        fineGif.add(1);
-        skipGif.add(1);//1
+        fineGif.add(1.7f);
+        skipGif.add(1f);//1
 
         al.add(jLabel5);
-        fineGif.add(7);
-        skipGif.add(3);//2
+        fineGif.add(7f);
+        skipGif.add(2f);//2
 
         al.add(jLabel6);
-        fineGif.add(0);
-        skipGif.add(0);//6
+        fineGif.add(0.5f);
+        skipGif.add(0f);//6
 
         al.add(jLabel7);
-        fineGif.add(1);
-        skipGif.add(1);//1
+        fineGif.add(0.7f);
+        skipGif.add(1f);//1
 
         al.add(jLabel8);
-        fineGif.add(1);
-        skipGif.add(1);//1
+        fineGif.add(0.5f);
+        skipGif.add(1f);//1
 
         al.add(jLabel9);
-        fineGif.add(4);
-        skipGif.add(2);//4
+        fineGif.add(3.7f);
+        skipGif.add(2f);//4
+
+        al.add(jinc1);
+        fineGif.add(0.8f);
+        skipGif.add(1f);//4
+
+        al.add(jinc2);
+        fineGif.add(1f);
+        skipGif.add(2f);//4
+
+        al.add(jinc3);
+        fineGif.add(1f);
+        skipGif.add(2f);//4
+
+        al.add(jinc4);
+        fineGif.add(4f);
+        skipGif.add(2f);//4
 
         jLabel2.setVisible(false);
         jLabel3.setVisible(false);
@@ -80,11 +96,13 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         jLabel7.setVisible(false);
         jLabel8.setVisible(false);
         jLabel9.setVisible(false);
+
         jLabelPremiSpazio.setVisible(false);
 
-        dx1.setLocation(790, 400) ; //255x250 //540x810 
-        sx1.setLocation(-297, 500);//297x207
-
+        jinc1.setVisible(false);
+        jinc2.setVisible(false);
+        jinc3.setVisible(false);
+        jinc4.setVisible(false);
     }
 
     /**
@@ -97,10 +115,13 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jinc4 = new javax.swing.JLabel();
+        jinc3 = new javax.swing.JLabel();
+        jinc2 = new javax.swing.JLabel();
+        jinc1 = new javax.swing.JLabel();
         jLabelPremiSpazio = new javax.swing.JLabel();
         dx1 = new javax.swing.JLabel();
         sx1 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -121,10 +142,35 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
 
         jPanel1.setLayout(null);
 
-        jLabelPremiSpazio.setText("laura ti meno");
+        jinc4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/primo incontro/Frase12def.gif"))); // NOI18N
+        jinc4.setText("jLabel11");
+        jPanel1.add(jinc4);
+        jinc4.setBounds(0, 0, 540, 810);
+
+        jinc3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/primo incontro/Frase11def.gif"))); // NOI18N
+        jinc3.setText("jLabel11");
+        jPanel1.add(jinc3);
+        jinc3.setBounds(0, 0, 540, 810);
+
+        jinc2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/primo incontro/Frase10def.gif"))); // NOI18N
+        jinc2.setText("jLabel11");
+        jPanel1.add(jinc2);
+        jinc2.setBounds(0, 0, 540, 810);
+
+        jinc1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/primo incontro/Frase9def.gif"))); // NOI18N
+        jinc1.setText("jLabel11");
+        jPanel1.add(jinc1);
+        jinc1.setBounds(0, 0, 540, 810);
+
+        jLabelPremiSpazio.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelPremiSpazio.setFont(new java.awt.Font("Microsoft YaHei", 0, 18)); // NOI18N
+        jLabelPremiSpazio.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPremiSpazio.setText("SALTA CON BARRASPAZIATRICE");
         jLabelPremiSpazio.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabelPremiSpazio.setFocusable(false);
+        jLabelPremiSpazio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(jLabelPremiSpazio);
-        jLabelPremiSpazio.setBounds(190, 640, 130, 50);
+        jLabelPremiSpazio.setBounds(130, 690, 310, 100);
 
         dx1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/after effect/1dx.png"))); // NOI18N
         jPanel1.add(dx1);
@@ -133,8 +179,6 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
         sx1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/after effect/1sx.png"))); // NOI18N
         jPanel1.add(sx1);
         sx1.setBounds(0, 500, 310, 310);
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(0, 0, 540, 810);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/abissicurallo/Secdiscesadef.gif"))); // NOI18N
         jLabel9.setText("jLabel9");
@@ -254,7 +298,6 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel dx1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -265,12 +308,16 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelPremiSpazio;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jinc1;
+    private javax.swing.JLabel jinc2;
+    private javax.swing.JLabel jinc3;
+    private javax.swing.JLabel jinc4;
     private javax.swing.JLabel sx1;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        sec++;
+        sec += 0.1;
         // System.out.println(sec);
         if (count < al.size() - 1) {
             if (sec > fineGif.get(count)) {
@@ -287,11 +334,7 @@ public class FinestraIniziale extends javax.swing.JFrame implements ActionListen
             jLabelPremiSpazio.setVisible(false);
         }
         int seconditotali = 0;
-        if (seconditotali > 5) {
-            dx1.setLocation((dx1.getLocationOnScreen().x - 10), dx1.getLocationOnScreen().y);
 
-            sx1.setLocation((sx1.getLocationOnScreen().x + 10), sx1.getLocationOnScreen().y);
-        }
         seconditotali++;
     }
 }
